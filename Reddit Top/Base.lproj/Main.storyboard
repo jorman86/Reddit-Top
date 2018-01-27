@@ -33,6 +33,13 @@
                                                 <constraint firstAttribute="width" constant="70" id="EBo-ll-afN"/>
                                             </constraints>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cVW-pw-Yks">
+                                            <rect key="frame" x="41" y="36" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="dd1-bb-dHW"/>
+                                                <constraint firstAttribute="height" constant="20" id="itn-D7-1Ug"/>
+                                            </constraints>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeJ-av-x1q">
                                             <rect key="frame" x="94" y="11" width="265" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -60,6 +67,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="aeJ-av-x1q" firstAttribute="top" secondItem="J9N-Oj-GaY" secondAttribute="topMargin" id="7jX-y7-DWs"/>
+                                        <constraint firstItem="cVW-pw-Yks" firstAttribute="leading" secondItem="J9N-Oj-GaY" secondAttribute="leadingMargin" constant="25" id="9XF-Og-oLv"/>
                                         <constraint firstItem="CeP-LD-ow0" firstAttribute="top" secondItem="pKV-uD-UPI" secondAttribute="bottom" constant="3" id="Bv2-Lb-lrv"/>
                                         <constraint firstItem="CeP-LD-ow0" firstAttribute="trailing" secondItem="J9N-Oj-GaY" secondAttribute="trailingMargin" id="Hll-Io-bZs"/>
                                         <constraint firstItem="pKV-uD-UPI" firstAttribute="leading" secondItem="SWj-zQ-tAp" secondAttribute="trailing" constant="8" id="Od4-HO-Fpd"/>
@@ -67,6 +75,7 @@
                                         <constraint firstItem="aeJ-av-x1q" firstAttribute="trailing" secondItem="J9N-Oj-GaY" secondAttribute="trailingMargin" id="Qj5-Tv-VMp"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="3Vk-KU-wh8" secondAttribute="bottom" constant="7" id="U5Z-MP-7tF"/>
                                         <constraint firstItem="aeJ-av-x1q" firstAttribute="leading" secondItem="SWj-zQ-tAp" secondAttribute="trailing" constant="8" id="YbC-lZ-Vb2"/>
+                                        <constraint firstItem="cVW-pw-Yks" firstAttribute="top" secondItem="J9N-Oj-GaY" secondAttribute="topMargin" constant="25" id="gw2-eN-zBI"/>
                                         <constraint firstItem="3Vk-KU-wh8" firstAttribute="trailing" secondItem="J9N-Oj-GaY" secondAttribute="trailingMargin" id="kx0-lL-2jq"/>
                                         <constraint firstItem="3Vk-KU-wh8" firstAttribute="leading" secondItem="J9N-Oj-GaY" secondAttribute="leadingMargin" constant="78" id="ncc-YB-2kK"/>
                                         <constraint firstItem="3Vk-KU-wh8" firstAttribute="top" secondItem="CeP-LD-ow0" secondAttribute="bottom" constant="4" id="oiZ-pU-HKl"/>
@@ -77,6 +86,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="cVW-pw-Yks" id="yMN-IN-3cs"/>
                                     <outlet property="author" destination="pKV-uD-UPI" id="74z-Mt-pxb"/>
                                     <outlet property="comments" destination="3Vk-KU-wh8" id="KnW-YN-PXv"/>
                                     <outlet property="date" destination="CeP-LD-ow0" id="Gpi-mT-Xkg"/>

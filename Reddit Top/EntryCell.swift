@@ -8,16 +8,28 @@
 
 import UIKit
 
-class EntryCell: UITableViewCell {
+class EntryCell: UITableViewCell, EntryDelegate {
+    
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var thumbnailImage: UIImageView!
+    
+    func imageReady(image: UIImage?) {
+        activityIndicator.stopAnimating()
+        if let image = image{
+            thumbnailImage.image = image
+        } else {
+            thumbnailImage.image = #imageLiteral(resourceName: "NoImage")
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

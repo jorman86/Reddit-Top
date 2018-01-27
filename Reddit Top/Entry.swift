@@ -9,14 +9,29 @@
 import Foundation
 import UIKit
 
+protocol EntryDelegate : class{
+    func imageReady(image:UIImage?)
+}
+
 class Entry{
     var title : String
     var author : String
     var date : Date
     var thumbnailImage : UIImage?
-    var thumbnailUrl : URL?
+    var thumbnailUrl : URL?{
+        didSet{
+            DispatchQueue.main.async {
+                if let thumb = self.thumbnailUrl, UIApplication.shared.canOpenURL(thumb){
+                    self.downloadThumbnail(url: thumb)
+                } else {
+                    self.thumbnailImage = #imageLiteral(resourceName: "NoImage")
+                }
+            }
+        }
+    }
     var imageUrl : URL?
     var comments : Int
+    weak var delegate : EntryDelegate?
     
     init(title:String, author:String, date:Date, comments:Int) {
         self.title = title
@@ -26,11 +41,31 @@ class Entry{
     }
     public var description: String {
         return """
-               Entry
-               Title: \(self.title)
-               Author: \(self.author)
-               Date: \(self.date)
-               Comments: \(self.comments)
-               """
+        Entry
+        Title: \(self.title)
+        Author: \(self.author)
+        Date: \(self.date)
+        Comments: \(self.comments)
+        """
+    }
+    
+    func downloadThumbnail(url:URL){
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                if error != nil {
+                    print(error!)
+                    if let delegate = self.delegate{
+                        delegate.imageReady(image: nil)
+                    }
+                    return
+                }
+                self.thumbnailImage = UIImage(data:data!)
+                
+                //update cells
+                if let delegate = self.delegate{
+                    delegate.imageReady(image: self.thumbnailImage)
+                }
+            }
+        }).resume()
     }
 }
