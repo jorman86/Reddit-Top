@@ -9,16 +9,22 @@
 import UIKit
 
 class RedditTableViewController: UITableViewController {
-
+    var entries = [Entry]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        refreshData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -90,5 +96,18 @@ class RedditTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    func refreshData(){
+        let service = RedditService()
+        service.getTopResults(limit: 50) { (entries, error) in
+            if let entries = entries{
+                self.entries = entries
+                self.tableView.reloadData()
+            }
+            if error != ""{
+                print(error)
+            }
+        }
+    }
 }
