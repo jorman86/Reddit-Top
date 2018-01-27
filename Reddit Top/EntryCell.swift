@@ -9,12 +9,17 @@
 import UIKit
 
 class EntryCell: UITableViewCell {
-
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var comments: UILabel!
+    @IBOutlet weak var thumbnailImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

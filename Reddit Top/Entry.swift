@@ -24,4 +24,13 @@ class Entry{
         self.date = date
         self.comments = comments
     }
+    public var description: String {
+        return """
+               Entry
+               Title: \(self.title)
+               Author: \(self.author)
+               Date: \(self.date)
+               Comments: \(self.comments)
+               """
+    }
 }

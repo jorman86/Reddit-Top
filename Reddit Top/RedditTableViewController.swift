@@ -13,7 +13,6 @@ class RedditTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,23 +33,32 @@ class RedditTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return entries.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cellIdentifier = "EntryCell"
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? EntryCell  else {
+            fatalError("The dequeued cell is not an instance of EntryCell.")
+        }
 
-        // Configure the cell...
-
+        let entry = entries[indexPath.row]
+        
+        cell.title.text = "Title: \(entry.title)"
+        cell.author.text = "Author: \(entry.author)"
+        cell.date.text = "Date: \(entry.date)"
+        cell.comments.text = "Comments: \(entry.comments)"
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
