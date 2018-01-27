@@ -10,6 +10,7 @@
 		EE3E263B201BDCB600F0804E /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E263A201BDCB600F0804E /* EntryCell.swift */; };
 		EE3E263D201BF0AD00F0804E /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E263C201BF0AD00F0804E /* Entry.swift */; };
 		EE3E263F201BF52E00F0804E /* RedditService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E263E201BF52E00F0804E /* RedditService.swift */; };
+		EE3E2642201C553F00F0804E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E2641201C553F00F0804E /* DetailViewController.swift */; };
 		EE7AB015201BD19C0078A855 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7AB014201BD19C0078A855 /* AppDelegate.swift */; };
 		EE7AB01A201BD19C0078A855 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE7AB018201BD19C0078A855 /* Main.storyboard */; };
 		EE7AB01C201BD19C0078A855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE7AB01B201BD19C0078A855 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		EE3E263A201BDCB600F0804E /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		EE3E263C201BF0AD00F0804E /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		EE3E263E201BF52E00F0804E /* RedditService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditService.swift; sourceTree = "<group>"; };
+		EE3E2641201C553F00F0804E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EE7AB011201BD19C0078A855 /* Reddit Top.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reddit Top.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE7AB014201BD19C0078A855 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE7AB019201BD19C0078A855 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				EE7AB014201BD19C0078A855 /* AppDelegate.swift */,
 				EE7AB018201BD19C0078A855 /* Main.storyboard */,
 				EE7AB034201BD2640078A855 /* RedditTableViewController.swift */,
+				EE3E2641201C553F00F0804E /* DetailViewController.swift */,
 				EE3E263C201BF0AD00F0804E /* Entry.swift */,
 				EE3E263A201BDCB600F0804E /* EntryCell.swift */,
 				EE3E263E201BF52E00F0804E /* RedditService.swift */,
@@ -211,6 +214,7 @@
 				EE3E263D201BF0AD00F0804E /* Entry.swift in Sources */,
 				EE3E263F201BF52E00F0804E /* RedditService.swift in Sources */,
 				EE7AB015201BD19C0078A855 /* AppDelegate.swift in Sources */,
+				EE3E2642201C553F00F0804E /* DetailViewController.swift in Sources */,
 				EE3E263B201BDCB600F0804E /* EntryCell.swift in Sources */,
 				EE7AB035201BD2640078A855 /* RedditTableViewController.swift in Sources */,
 			);

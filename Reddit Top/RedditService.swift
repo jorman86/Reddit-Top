@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import UIKit
 
 let redditEndPoint = "https://www.reddit.com/top/.json"
 
 class RedditService {
     typealias JSONDictionary = [String: Any]
     typealias Result = ([Entry]?, String) -> ()
+    typealias imageResult = (UIImage?, String) -> ()
     
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
@@ -42,6 +44,21 @@ class RedditService {
             dataTask?.resume()
         }
     }
+    
+    func downloadImage(_ url:URL, completion: @escaping imageResult){
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            DispatchQueue.main.async {
+                if error != nil {
+                    completion(nil, error!.localizedDescription)
+                    return
+                }
+                
+                
+                completion(UIImage(data: data!),"")
+            }
+        }).resume()
+    }
+    
     fileprivate func updateSearchResults(_ data: Data) {
         var response: JSONDictionary?
         entries.removeAll()

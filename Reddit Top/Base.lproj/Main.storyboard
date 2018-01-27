@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -101,10 +102,48 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Reddit Top" id="JhL-JA-zlz"/>
+                    <connections>
+                        <segue destination="SDU-sy-oCr" kind="show" identifier="detailSegue" id="aT2-1x-P4a"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lW2-7j-xtM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="420" y="-85.007496251874073"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="v3T-W8-qfd">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SDU-sy-oCr" customClass="DetailViewController" customModule="Reddit_Top" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O7g-dv-MOX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvp-Wu-yFh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rvu-Cq-Gd3">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gvp-Wu-yFh" firstAttribute="trailing" secondItem="TuJ-Ne-qm3" secondAttribute="trailing" id="EcG-Fv-Cb5"/>
+                            <constraint firstItem="gvp-Wu-yFh" firstAttribute="top" secondItem="TuJ-Ne-qm3" secondAttribute="top" id="ZIp-Ci-4Q1"/>
+                            <constraint firstItem="rvu-Cq-Gd3" firstAttribute="centerY" secondItem="O7g-dv-MOX" secondAttribute="centerY" id="azb-ZD-MC8"/>
+                            <constraint firstItem="gvp-Wu-yFh" firstAttribute="bottom" secondItem="TuJ-Ne-qm3" secondAttribute="bottom" id="ifn-Qa-7nH"/>
+                            <constraint firstItem="rvu-Cq-Gd3" firstAttribute="centerX" secondItem="O7g-dv-MOX" secondAttribute="centerX" id="kyd-5h-QRn"/>
+                            <constraint firstItem="gvp-Wu-yFh" firstAttribute="leading" secondItem="TuJ-Ne-qm3" secondAttribute="leading" id="nvE-wO-Qh3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TuJ-Ne-qm3"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="rvu-Cq-Gd3" id="k0v-f4-Hlg"/>
+                        <outlet property="entryImage" destination="gvp-Wu-yFh" id="RWP-R5-4fk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8S-z8-RLF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1229.5999999999999" y="-85.007496251874073"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Fqc-tZ-12M">
